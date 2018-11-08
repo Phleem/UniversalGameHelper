@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="UniversalGameHelper">
+            <or abstract="true" name="OnlineMode">
+                <feature name="WIFI"/>
+                <feature name="Bluetooth"/>
+            </or>
+            <and abstract="true" name="DiceEngine">
+                <feature mandatory="true" name="DxDice"/>
+            </and>
+            <feature name="Counter"/>
+            <feature name="Timer"/>
+            <feature name="Notes"/>
+            <feature name="PlayerManager"/>
+            <feature name="NameGenerator"/>
+            <and abstract="true" mandatory="true" name="Base">
+                <feature mandatory="true" name="Share"/>
+                <feature mandatory="true" name="Layout"/>
+                <feature mandatory="true" name="DebugLog"/>
+                <feature mandatory="true" name="Autosave"/>
+                <feature mandatory="true" name="Statistics"/>
+                <feature mandatory="true" name="Donate"/>
+                <alt abstract="true" mandatory="true" name="Storage">
+                    <feature name="SharedPreferences"/>
+                    <feature name="Database"/>
+                    <feature name="Cloud"/>
+                </alt>
+                <feature mandatory="true" name="MinSDK"/>
+            </and>
+        </and>
+    </struct>
+    <constraints>
+        <rule>
+            <conj>
+                <imp>
+                    <var>OnlineMode</var>
+                    <var>PlayerManager</var>
+                </imp>
+                <imp>
+                    <var>PlayerManager</var>
+                    <var>OnlineMode</var>
+                </imp>
+            </conj>
+        </rule>
+    </constraints>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>

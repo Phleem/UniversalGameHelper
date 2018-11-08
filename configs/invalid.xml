@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="UniversalGameHelper"/>
+    <feature automatic="selected" name="Base"/>
+    <feature automatic="selected" name="Share"/>
+    <feature automatic="selected" name="Layout"/>
+    <feature automatic="selected" name="DebugLog"/>
+    <feature automatic="selected" name="Autosave"/>
+    <feature automatic="selected" name="Statistics"/>
+    <feature automatic="selected" name="Donate"/>
+    <feature automatic="selected" name="Storage"/>
+    <feature automatic="selected" name="MinSDK"/>
+</configuration>
